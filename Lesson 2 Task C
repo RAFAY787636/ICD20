@@ -1,0 +1,13 @@
+ public static void main(String [] args) {
+    // place your code here!
+    int NOK = 102;
+    System.out.println("The number of keys on a keyboard is " + NOK + ".");
+
+    double pi = 3.14;
+    System.out.println("The value of PI is: " + pi + ".");
+    
+       
+       
+    // your code ends here!
+  }
+}
