@@ -1,0 +1,11 @@
+// any import statements go here!
+
+public class Main {
+    public static void main(String[] args) {
+        // Your code goes here!
+        int amount= 7*6;
+        amount= amount + 1;
+       System.out.println("seven times six is " + amount);
+        // Yout code stops here!
+    }
+}
