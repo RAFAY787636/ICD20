@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+class main{
+
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+     
+        System.out.print("Enter the length of the rectangle: ");
+        double length = input.nextDouble();
+        System.out.print("Enter the width of the rectangle: ");
+        double width = input.nextDouble();
+        double rectangleArea = length * width;
+        System.out.println("The area of the rectangle is: " + rectangleArea);
+
+        System.out.print("Enter the radius of the circle: ");
+        double radius = input.nextDouble();
+        double circleArea = Math.PI * radius * radius;
+        System.out.println("The area of the circle is: " + circleArea);
+
+        
+        System.out.print("Enter the height of the cylinder: ");
+        double height = input.nextDouble();
+        double cylinderVolume = Math.PI * radius * radius * height;
+        double cylinderSurfaceArea = 2 * Math.PI * radius * height + 2 * Math.PI * radius * radius;
+        System.out.println("The volume of the cylinder is: " + cylinderVolume);
+        System.out.println("The surface area of the cylinder is: " + cylinderSurfaceArea);
+
+        
+        System.out.print("Enter the length of the pendulum in meters: ");
+        double L = input.nextDouble();
+        double P = 2 * Math.PI * Math.sqrt(L / 9.8);
+        System.out.println("The period of the pendulum is: " + P + " seconds");
+
+        input.close();
+    }
+}
