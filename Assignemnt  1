@@ -1,38 +1,44 @@
 import java.util.Scanner;
 
-class main{
+/**
+ * Program Name: Assignment 1
+ * Author: Rafay
+ * Date: 10/27/2024
+ */
 
+public class Testing {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-     
-        System.out.print("Enter the length of the rectangle: ");
+        // RECTANGLE AREA CALCULATION
+        System.out.print("Enter the length of the rectangle: "); // Prompt for rectangle length
         double length = input.nextDouble();
-        System.out.print("Enter the width of the rectangle: ");
+        System.out.print("Enter the width of the rectangle: ");  // Prompt for rectangle width
         double width = input.nextDouble();
-        double rectangleArea = length * width;
+        double rectangleArea = length * width;                   // Calculate area
         System.out.println("The area of the rectangle is: " + rectangleArea);
 
-        System.out.print("Enter the radius of the circle: ");
+        // CIRCLE AREA CALCULATION
+        System.out.print("Enter the radius of the circle: ");     // Prompt for circle radius
         double radius = input.nextDouble();
-        double circleArea = Math.PI * radius * radius;
+        double circleArea = Math.PI * radius * radius;            // Calculate area using πr^2
         System.out.println("The area of the circle is: " + circleArea);
 
-        
-        System.out.print("Enter the height of the cylinder: ");
+        // CYLINDER VOLUME AND SURFACE AREA CALCULATION
+        System.out.print("Enter the height of the cylinder: ");   // Prompt for cylinder height
         double height = input.nextDouble();
-        double cylinderVolume = Math.PI * radius * radius * height;
-        double cylinderSurfaceArea = 2 * Math.PI * radius * height + 2 * Math.PI * radius * radius;
+        double cylinderVolume = Math.PI * radius * radius * height; // Volume: πr^2h
+        double cylinderSurfaceArea = 2 * Math.PI * radius * height + 2 * Math.PI * radius * radius; // Surface area: 2πrh + 2πr^2
         System.out.println("The volume of the cylinder is: " + cylinderVolume);
         System.out.println("The surface area of the cylinder is: " + cylinderSurfaceArea);
 
-        
-        System.out.print("Enter the length of the pendulum in meters: ");
+        // PENDULUM PERIOD CALCULATION
+        System.out.print("Enter the length of the pendulum in meters: "); // Prompt for pendulum length
         double L = input.nextDouble();
-        double P = 2 * Math.PI * Math.sqrt(L / 9.8);
+        double P = 2 * Math.PI * Math.sqrt(L / 9.8);             // Period formula: 2π√(L/g), g ≈ 9.8 m/s²
         System.out.println("The period of the pendulum is: " + P + " seconds");
 
-        input.close();
+        input.close();                                           // Close the scanner
     }
 }
