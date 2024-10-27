@@ -1,5 +1,9 @@
- public static void main(String [] args) {
-    // place your code here!
+// any import statements go here!
+
+public class Main {
+    public static void main(String[] args) {
+        // Your code goes here!
+        
     int NOK = 102;
     System.out.println("The number of keys on a keyboard is " + NOK + ".");
 
@@ -7,7 +11,7 @@
     System.out.println("The value of PI is: " + pi + ".");
     
        
-       
-    // your code ends here!
-  }
+        
+        // Yout code stops here!
+    }
 }
