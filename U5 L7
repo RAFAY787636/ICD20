@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class DivisionExample { // I changed the file name to DivisionExample
+    public static void main(String[] args) {
+        Scanner kb = new Scanner(System.in); 
+
+        System.out.print("Enter the first number (a): ");
+        double a = kb.nextDouble(); // Get the first number
+
+        System.out.print("Enter the second number (b): ");
+        double b = kb.nextDouble(); // Get the second number
+
+        // Check if b is zero before dividing
+        if (b == 0) {
+            System.out.println("Error: Division by zero is not allowed.");
+        } else {
+            double result = a / b; // Do the division
+            System.out.println("Result of a/b is: " + result); // Show the result
+        }
+
+        kb.close(); // Close the scanner
+    }
+}
