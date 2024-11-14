@@ -5,17 +5,17 @@ class Main {
     Scanner kbd = new Scanner(System.in);
     String greeting = new String();
 
-  
+    // Ask for a one-word greeting
     System.out.print("Hi. Please enter a greeting in one word: ");
     greeting = kbd.next(); 
-    System.out.printf("You said: %s.\n", greeting);
+    System.out.println("You said: " + greeting + ".");
 
     // Consume the leftover newline character after next()
     kbd.nextLine();
 
-   
+    // Ask for a multi-word greeting
     System.out.print("Hi. Please enter a greeting in more than one word: ");
     greeting = kbd.nextLine(); 
-    System.out.printf("You said: %s.\n", greeting);
+    System.out.println("You said: " + greeting + ".");
   }
 }
