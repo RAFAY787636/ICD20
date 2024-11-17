@@ -1,0 +1,44 @@
+// Name: Rafay Jamil
+// Student Number: 787636
+// Description: Simple Console Calculator
+
+import java.util.Scanner;
+
+public class Calc {
+    public static void main(String[] args) {
+        // Create a scanner to get input
+        Scanner scan = new Scanner(System.in);
+
+        // Ask for first number
+        System.out.println("Enter the first number: ");
+        double num1 = scan.nextDouble();
+
+        // Ask for second number
+        System.out.println("Enter the second number: ");
+        double num2 = scan.nextDouble();
+
+        // Ask for the operator
+        System.out.println("Enter an operator (+, -, *, /): ");
+        char operator = scan.next().charAt(0);
+
+        // Do the calculation
+        if (operator == '+') {
+            System.out.println("The result is: " + (num1 + num2));
+        } else if (operator == '-') {
+            System.out.println("The result is: " + (num1 - num2));
+        } else if (operator == '*') {
+            System.out.println("The result is: " + (num1 * num2));
+        } else if (operator == '/') {
+            if (num2 != 0) {
+                System.out.println("The result is: " + (num1 / num2));
+            } else {
+                System.out.println("Error: You cannot divide by zero.");
+            }
+        } else {
+            System.out.println("Error: Invalid operator. Please use +, -, *, or /.");
+        }
+
+        // Close the scanner
+        scan.close();
+    }
+}
