@@ -1,0 +1,54 @@
+/*
+ * Name: Rafay Jamil
+ * Student Number: 787636
+ * Program: strings
+ * Description: This program uses if-else statements and compareTo() 
+ * to arrange words in alphabetical order.
+ */
+
+class strings {
+   public static void main(String[] args) {
+      // Hardcoded words
+      String w1 = "shellshock";
+      String w2 = "shellac";
+      String w3 = "fortify";
+
+      // Declare variables for first, middle, and last words
+      String first, middle, last;
+
+      // Compare and decide the order
+      if (w1.compareTo(w2) < 0 && w1.compareTo(w3) < 0) {
+         first = w1;
+         if (w2.compareTo(w3) < 0) {
+            middle = w2;
+            last = w3;
+         } else {
+            middle = w3;
+            last = w2;
+         }
+      } else if (w2.compareTo(w1) < 0 && w2.compareTo(w3) < 0) {
+         first = w2;
+         if (w1.compareTo(w3) < 0) {
+            middle = w1;
+            last = w3;
+         } else {
+            middle = w3;
+            last = w1;
+         }
+      } else {
+         first = w3;
+         if (w1.compareTo(w2) < 0) {
+            middle = w1;
+            last = w2;
+         } else {
+            middle = w2;
+            last = w1;
+         }
+      }
+
+      // Print the words in alphabetical order
+      System.out.println("The first word is: " + first);
+      System.out.println("The next word is: " + middle);
+      System.out.println("The last word is: " + last);
+   }
+}
