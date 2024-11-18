@@ -1,0 +1,38 @@
+/*
+ * Name: Rafay Jamil
+ * Student Number: 787636
+ * Program: Grade Calculator
+ * Description: takes a percentage mark and gives a
+ * letter grade based off percentage.
+ */
+
+import java.util.Scanner;
+
+class marks{
+  public static void main(String[] args) {
+    // Create a scanner for input
+    Scanner sc = new Scanner(System.in);
+
+    // Ask the user to enter a percentage mark
+    System.out.print("Please enter a percentage mark (0-100): ");
+    int mark = sc.nextInt(); // Read the integer input
+
+    // Determine the letter grade based on the mark
+    if (mark >= 80 && mark <= 100) { // Marks between 80 and 100
+      System.out.println(mark + " is a letter grade of A.");
+    } else if (mark >= 70 && mark <= 79) { // Marks between 70 and 79
+      System.out.println(mark + " is a letter grade of B.");
+    } else if (mark >= 60 && mark <= 69) { // Marks between 60 and 69
+      System.out.println(mark + " is a letter grade of C.");
+    } else if (mark >= 50 && mark <= 59) { // Marks between 50 and 59
+      System.out.println(mark + " is a letter grade of D.");
+    } else if (mark >= 0 && mark <= 49) { // Marks between 0 and 49
+      System.out.println(mark + " is a letter grade of F.");
+    } else { // If the input is outside the range 0-100
+      System.out.println("Invalid mark. Please enter a value between 0 and 100.");
+    }
+
+    // Exix program message 
+    System.out.println("BYE!");
+  }
+}
