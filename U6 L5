@@ -1,0 +1,33 @@
+/*
+Author: Rafay
+Student Number: 787636
+Description: Calculate the factorial of a number.
+*/
+import java.util.Scanner;
+
+public class Calc {
+public static void main(String[] args) {
+Scanner scanner = new Scanner(System.in); // Create a Scanner object
+
+// Ask for input
+System.out.print("Enter a positive integer to calculate its factorial: ");
+long number = scanner.nextLong();
+
+ // Check if the number is negative
+if (number < 0) {
+ System.out.println("Factorial is not available for negative numbers.");
+} else {
+long factorial = 1;
+
+// Calculate the factorial using a loop
+for (long i = 1; i <= number; i++) { 
+factorial *= i;
+}
+
+// Print the result
+System.out.println("The factorial of " + number + " is: " + factorial);
+}
+
+scanner.close(); // Close the Scanner
+}
+}
