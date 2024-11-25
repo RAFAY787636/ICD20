@@ -3,12 +3,11 @@
  * Student Number: 787636
  * Program: Guessing Game
  * Description: This program lets the user guess a number between 1 and 10. 
- *              The user has up to 5 attempts to guess the correct number.
  */
 
 import java.util.Scanner;
 
-public class GuessGame {
+public class Calc{
     public static void main(String[] args) {
         // Create Scanner for input
         Scanner sc = new Scanner(System.in);
