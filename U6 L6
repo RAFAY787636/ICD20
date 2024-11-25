@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class menu { // Class name must match the file name (Menu.java)
+    public static void main(String[] args) {
+        Scanner kb = new Scanner(System.in); // Initialize the scanner for user input
+        String choice = ""; // Variable to store the user's choice
+        boolean valid = false; // Boolean flag to validate input
+
+        // Loop until a valid input is entered
+        while (!valid) {
+            System.out.print("Choose a, b, or c: "); // Prompt the user
+            choice = kb.next(); // Read input as a string
+
+            // Validate input (case-insensitive for convenience)
+            valid = (choice.equalsIgnoreCase("a") ||
+                     choice.equalsIgnoreCase("b") ||
+                     choice.equalsIgnoreCase("c"));
+
+            if (!valid) { // If invalid, prompt the user again
+                System.out.println("Invalid choice. Please try again.");
+            }
+        }
+
+        // Output the user's valid choice
+        System.out.printf("You chose: %s\n", choice);
+        kb.close(); // Close the scanner to avoid resource leaks
+    }
+}
