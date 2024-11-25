@@ -1,3 +1,9 @@
+/*
+Author: Rafay
+Student Number: 787636
+Program name: menu
+*/
+
 import java.util.Scanner;
 
 public class menu { // Class name must match the file name (Menu.java)
