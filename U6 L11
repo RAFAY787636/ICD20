@@ -1,0 +1,28 @@
+/*
+Author: Rafay Jamil
+Student Number: 787636
+Description: Prints emojis
+*/
+
+public class Emoji {
+public static void main(String[] args) {
+// Unicode range for emojis
+ int start = 0x1f600; // Starting Unicode
+int end = 0x1f64f;   // Ending Unicode
+int emojisPerRow = 8; // Number of emojis per row
+
+System.out.println("Emoji List:");
+for (int codePoint = start; codePoint <= end; codePoint++) {
+// Convert the code point to a string
+String emoji = new String(Character.toChars(codePoint));
+
+// Print the hexadecimal value and the emoji in a fixed-width format
+System.out.printf("%-6s %-4s", String.format("0x%x", codePoint), emoji);
+
+// Add a newline after every 8 emojis
+if ((codePoint - start + 1) % emojisPerRow == 0) {
+System.out.println();
+}
+}
+}
+}
