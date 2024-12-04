@@ -1,0 +1,56 @@
+import java.util.Scanner;
+
+public class CollatzConjecture {
+public static void main(String[] args) {
+Scanner scanner = new Scanner(System.in);
+boolean continueProgram = true;
+
+while (continueProgram) {
+System.out.print("Enter a whole number > 0: ");
+int n = scanner.nextInt();
+
+if (n <= 0) {
+System.out.println("Invalid input. Please enter a positive whole number.");
+continue;
+}
+
+// Initialize variables
+int currentNumber = n;
+int termsCount = 0;
+int highestValue = n;
+StringBuilder sequence = new StringBuilder();
+
+// Generate Collatz sequence
+while (currentNumber != 1) {
+sequence.append(currentNumber).append("; ");
+termsCount++;
+if (currentNumber > highestValue) {
+highestValue = currentNumber;
+}
+// Apply Collatz rules
+if (currentNumber % 2 == 0) {
+currentNumber /= 2;
+} else {
+currentNumber = currentNumber * 3 + 1;
+}
+}
+
+// Add the final "1" to the sequence
+sequence.append("1");
+termsCount++;
+
+// Output results
+System.out.println("The Collatz sequence for n = " + n + " is: " + sequence);
+System.out.printf("Number of terms = %,d\n", termsCount);
+System.out.printf("Highest value reached = %,d\n", highestValue);
+
+// Ask user if they want to run another sequence
+System.out.print("Do another? (y/n): ");
+char response = scanner.next().charAt(0);
+continueProgram = (response == 'y' || response == 'Y');
+}
+
+System.out.println("Goodbye!");
+scanner.close();
+}
+}
