@@ -1,0 +1,53 @@
+BEGIN  
+    INITIALIZE Scanner for input  
+    SET continueProgram = true  
+    
+    WHILE continueProgram is true  
+        PROMPT user to "Enter a whole number > 0"  
+        READ input as n  
+
+        IF n <= 0  
+            PRINT "Invalid input. Please enter a positive whole number."  
+            CONTINUE to next iteration of WHILE loop  
+
+        SET currentNumber = n  
+        SET termsCount = 0  
+        SET highestValue = n  
+        INITIALIZE sequence as empty string  
+
+        // Generate Collatz Sequence  
+        WHILE currentNumber != 1  
+            APPEND currentNumber + "; " to sequence  
+            INCREMENT termsCount  
+
+            IF currentNumber > highestValue  
+                SET highestValue = currentNumber  
+
+            IF currentNumber is EVEN  
+                SET currentNumber = currentNumber / 2  
+            ELSE  
+                SET currentNumber = (currentNumber * 3) + 1  
+
+        END WHILE  
+
+        // Add the final "1" to sequence  
+        APPEND "1" to sequence  
+        INCREMENT termsCount  
+
+        PRINT "The Collatz sequence for n = " + n + " is: " + sequence  
+        PRINT "Number of terms = " + termsCount  
+        PRINT "Highest value reached = " + highestValue  
+
+        PROMPT user "Do another? (y/n):"  
+        READ response as char  
+
+        IF response == 'y' or response == 'Y'  
+            SET continueProgram = true  
+        ELSE  
+            SET continueProgram = false  
+
+    END WHILE  
+
+    PRINT "Goodbye!"  
+    CLOSE Scanner  
+END  
