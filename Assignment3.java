@@ -5,12 +5,12 @@ import java.util.Scanner;
  * Author: Rafay Jamil
  * Student Number: 787636
  * Date: January 9, 2025
- 
+ * 
  * Title: Rock-Paper-Scissors Game
-  
+ * 
  * Description:
- * This program lets you play a Rock-Paper-Scissors game against the computer.
- * It keeps track of the number of wins, losses, and ties over a specified number of rounds.
+ * This program lets you play a classic Rock-Paper-Scissors game against the computer.
+ * It keeps track of the number of wins, losses,.
  * 
  * Variable Dictionary:
  * - scanner: Scanner object for reading user input.
@@ -35,5 +35,68 @@ public class Assignment3 {
 
         // Ask the user how many games they want to play
         System.out.print("How many games do you want to play? ");
-        int numberOfGames = scanner
+        int numberOfGames = scanner.nextInt(); // Total number of games to play
 
+        // Loop for each game
+        for (int i = 1; i <= numberOfGames; i++) {
+            // Ask the user for their choice
+            System.out.print("Game " + i + ": Enter r for rock, p for paper, or s for scissors: ");
+            char playerChoice = scanner.next().toLowerCase().charAt(0); // Player's choice
+
+            // Make sure the input is valid
+            while (playerChoice != 'r' && playerChoice != 'p' && playerChoice != 's') {
+                System.out.print("Invalid input. Please enter r, p, or s: ");
+                playerChoice = scanner.next().toLowerCase().charAt(0);
+            }
+
+            // Computer randomly picks 0, 1, or 2
+            int computerChoiceNumber = (int) (Math.random() * 3); // Random number for computer's choice
+            char computerChoice = ' '; // Computer's choice
+            if (computerChoiceNumber == 0) {
+                computerChoice = 'r';
+            } else if (computerChoiceNumber == 1) {
+                computerChoice = 'p';
+            } else {
+                computerChoice = 's';
+            }
+
+            // Print what the computer picked
+            System.out.println("You chose: " + getChoiceName(playerChoice));
+            System.out.println("Computer chose: " + getChoiceName(computerChoice));
+
+            // Determine the winner
+            if (playerChoice == computerChoice) {
+                System.out.println("It's a tie!");
+                ties++;
+            } else if ((playerChoice == 'r' && computerChoice == 's') ||
+                       (playerChoice == 'p' && computerChoice == 'r') ||
+                       (playerChoice == 's' && computerChoice == 'p')) {
+                System.out.println("You win!");
+                playerWins++;
+            } else {
+                System.out.println("Computer wins!");
+                computerWins++;
+            }
+        }
+
+        // Print the final results
+        System.out.println("\nGame Over!");
+        System.out.println("Player wins: " + playerWins);
+        System.out.println("Computer wins: " + computerWins);
+        System.out.println("Ties: " + ties);
+
+        // Close the scanner
+        scanner.close();
+    }
+
+    // This method converts the character choice into the full word
+    public static String getChoiceName(char choice) {
+        if (choice == 'r') {
+            return "Rock";
+        } else if (choice == 'p') {
+            return "Paper";
+        } else {
+            return "Scissors";
+        }
+    }
+}
